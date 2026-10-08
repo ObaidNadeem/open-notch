@@ -101,7 +101,7 @@
 </tr>
 <tr>
 <td>Model name and context per row</td>
-<td>◐ context ring, no model</td>
+<td>✓ “Opus 5.5” beside the branch, and a context ring</td>
 <td>✓ <em>seen</em>: “Opus 5.5 · 39%”</td>
 <td>–</td>
 </tr>
@@ -213,8 +213,7 @@
 <li>It is <strong>not notarised</strong>, so macOS warns on first launch. Agent Notch is notarised.</li>
 <li>It has <strong>no automatic updates</strong>, on purpose (it never phones home), which is less convenient than both others.</li>
 <li>Approvals reach <strong>two agents</strong> (Claude Code, Codex) and questions one (Claude Code). Command Code offers no hook. Agent Notch’s setup offers approval replies for the same two, and its bundle also forwards OpenCode and Cursor prompts.</li>
-<li>Its <strong>Claude limits are only as fresh as the last Claude Code session</strong>. Both apps now show Claude’s 5-hour and weekly percentages, but Agent Notch reads your Claude login from the Keychain and asks Anthropic, so its figures stay current with no session open. Open Notch reads no login and makes no request: it takes what Claude Code passes its own status line.</li>
-<li>It shows <strong>no model name</strong> on a row. Agent Notch does (“Opus 5.5”, “GPT-6.1 Sol”).</li>
+<li>Its <strong>Claude limits read no login by default</strong>, so they are only as fresh as the last Claude Code session. Agent Notch always reads your Claude login from the Keychain and asks Anthropic. Open Notch does the same only if you turn on Live Claude limits.</li>
 <li>It reads <strong>exact state for four agents</strong> only (Claude Code, Codex, Command Code, OpenCode). Cursor, Kimi, Pi, LM Studio, Claude Desktop (Cowork) and the rest show as “Open” while they run. In a live run Agent Notch read Claude Code and Codex in depth, monitored Cursor, Antigravity and Pi, and did not show Command Code at all.</li>
 <li>It runs on <strong>Apple silicon with macOS 13 or later</strong>. Boring Notch also runs on Intel.</li>
 <li>It has <strong>no music, calendar, volume overlay or AirDrop</strong>, and is not meant to.</li>
