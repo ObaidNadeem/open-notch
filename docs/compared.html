@@ -131,7 +131,7 @@
 </tr>
 <tr>
 <td>Plan limits and token use</td>
-<td>✓ Codex %, Claude plan, token estimates</td>
+<td>✓ Claude 5 h and weekly % (from Claude Code’s status line), Codex %, token estimates</td>
 <td>✓ <em>seen</em>: Claude 5 h and weekly %, Codex weekly %</td>
 <td>–</td>
 </tr>
@@ -213,7 +213,7 @@
 <li>It is <strong>not notarised</strong>, so macOS warns on first launch. Agent Notch is notarised.</li>
 <li>It has <strong>no automatic updates</strong>, on purpose (it never phones home), which is less convenient than both others.</li>
 <li>Approvals reach <strong>two agents</strong> (Claude Code, Codex) and questions one (Claude Code). Command Code offers no hook. Agent Notch’s setup offers approval replies for the same two, and its bundle also forwards OpenCode and Cursor prompts.</li>
-<li>It shows <strong>no Claude plan percentages</strong>. Agent Notch shows Claude’s 5-hour and weekly limits by reading your Claude login from the Keychain; Open Notch deliberately does not read it, so for Claude it shows the plan and token estimates instead.</li>
+<li>Its <strong>Claude limits are only as fresh as the last Claude Code session</strong>. Both apps now show Claude’s 5-hour and weekly percentages, but Agent Notch reads your Claude login from the Keychain and asks Anthropic, so its figures stay current with no session open. Open Notch reads no login and makes no request: it takes what Claude Code passes its own status line.</li>
 <li>It shows <strong>no model name</strong> on a row. Agent Notch does (“Opus 5.5”, “GPT-6.1 Sol”).</li>
 <li>It reads <strong>exact state for four agents</strong> only (Claude Code, Codex, Command Code, OpenCode). Cursor, Kimi, Pi, LM Studio, Claude Desktop (Cowork) and the rest show as “Open” while they run. In a live run Agent Notch read Claude Code and Codex in depth, monitored Cursor, Antigravity and Pi, and did not show Command Code at all.</li>
 <li>It runs on <strong>Apple silicon with macOS 13 or later</strong>. Boring Notch also runs on Intel.</li>
