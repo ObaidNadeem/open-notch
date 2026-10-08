@@ -52,7 +52,7 @@
 <span class="line"><span style="color:#E6EDF3">NOTCH_X</span><span style="color:#FF7B72">=</span><span style="color:#A5D6FF">864</span><span style="color:#E6EDF3"> BENCH_SETTLE</span><span style="color:#FF7B72">=</span><span style="color:#A5D6FF">120</span><span style="color:#FFA657"> python3</span><span style="color:#A5D6FF"> scripts/bench/bench.py</span><span style="color:#FF7B72"> &lt;</span><span style="color:#A5D6FF">binar</span><span style="color:#E6EDF3">y</span><span style="color:#FF7B72">&gt;</span><span style="color:#A5D6FF"> hover</span><span style="color:#79C0FF"> 60</span></span></code></pre>
 <p><code>NOTCH_X</code> is the notch’s horizontal centre in points on your display.</p>
 <h2 id="features">Features</h2>
-<p>✓ yes · ◐ partly · – no · ? not listed on its own site, and not tested.</p>
+<p>✓ yes · ◐ partly · – no · ? not listed on its own site, and not tested. Agent Notch 2.1.8 was also run on 8 October next to real Claude Code, Codex and Command Code sessions, and its list read through the accessibility tree; cells marked <em>seen</em> come from that run.</p>
 <table>
 <thead>
 <tr>
@@ -66,19 +66,19 @@
 <tr>
 <td>Shows every coding agent running</td>
 <td>✓ exact state for Claude Code, Codex, Command Code, OpenCode; Cursor, Kimi, Pi, Gemini CLI, Aider, Kiro, LM Studio, Claude Desktop (Cowork) and more are listed while they run</td>
-<td>✓ Claude Code, Cursor, Codex, Kimi, OpenCode, Cowork, Antigravity, Pi, LM Studio</td>
+<td>◐ <em>seen</em>: Claude Code and Codex (CLI and app) live; setup also found Cursor, Antigravity, Pi. <strong>Six running Command Code sessions and the Command Code app were not shown</strong>; Claude sessions idle 20+ min dropped off</td>
 <td>–</td>
 </tr>
 <tr>
 <td>Agents in editors, desktop apps, browser tabs</td>
 <td>✓</td>
-<td>◐ names Ghostty, iTerm2, Warp, VS Code, Conductor</td>
+<td>◐ <em>seen</em>: Codex chats in the ChatGPT app; names Ghostty, iTerm2, Warp, VS Code, Conductor</td>
 <td>–</td>
 </tr>
 <tr>
 <td>Exact state from hooks and logs</td>
 <td>✓</td>
-<td>✓</td>
+<td>✓ <em>seen</em>: Working, Needs you, Finished</td>
 <td>–</td>
 </tr>
 <tr>
@@ -90,19 +90,25 @@
 <tr>
 <td>Sub-agents</td>
 <td>✓ tree or one line</td>
-<td>?</td>
+<td>◐ <em>seen</em>: as separate top-level rows, not under the parent</td>
 <td>–</td>
 </tr>
 <tr>
 <td>Click opens that exact chat or tab</td>
 <td>◐ iTerm2, Terminal and Codex chats; others come to the front</td>
-<td>?</td>
+<td>◐ rows say “Opens this session in Ghostty / ChatGPT”; exact tab not checked</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Model name and context per row</td>
+<td>◐ context ring, no model</td>
+<td>✓ <em>seen</em>: “Opus 5.5 · 39%”</td>
 <td>–</td>
 </tr>
 <tr>
 <td>Approve or deny a permission prompt</td>
 <td>◐ Claude Code and Codex (Codex asks you to trust its hook once)</td>
-<td>✓ agents not itemised</td>
+<td>◐ its setup offers replies for Claude Code and Codex (off by default); its bundle also forwards OpenCode and Cursor prompts; Kimi, Pi, Antigravity, Hermes observe-only. Not tested end to end</td>
 <td>–</td>
 </tr>
 <tr>
@@ -125,8 +131,8 @@
 </tr>
 <tr>
 <td>Plan limits and token use</td>
-<td>✓</td>
-<td>✓</td>
+<td>✓ Codex %, Claude plan, token estimates</td>
+<td>✓ <em>seen</em>: Claude 5 h and weekly %, Codex weekly %</td>
 <td>–</td>
 </tr>
 <tr>
@@ -206,10 +212,13 @@
 <ul>
 <li>It is <strong>not notarised</strong>, so macOS warns on first launch. Agent Notch is notarised.</li>
 <li>It has <strong>no automatic updates</strong>, on purpose (it never phones home), which is less convenient than both others.</li>
-<li>Approvals reach <strong>two agents</strong> (Claude Code, Codex) and questions one (Claude Code). Command Code and OpenCode offer no hook. Agent Notch’s site does not say which agents its approvals cover.</li>
-<li>It reads <strong>exact state for four agents</strong> only (Claude Code, Codex, Command Code, OpenCode). Cursor, Kimi, Pi, LM Studio, Claude Desktop (Cowork) and the rest show as “Open” while they run. Agent Notch lists the same names, and its site does not say how deeply it reads each.</li>
+<li>Approvals reach <strong>two agents</strong> (Claude Code, Codex) and questions one (Claude Code). Command Code offers no hook. Agent Notch’s setup offers approval replies for the same two, and its bundle also forwards OpenCode and Cursor prompts.</li>
+<li>It shows <strong>no Claude plan percentages</strong>. Agent Notch shows Claude’s 5-hour and weekly limits by reading your Claude login from the Keychain; Open Notch deliberately does not read it, so for Claude it shows the plan and token estimates instead.</li>
+<li>It shows <strong>no model name</strong> on a row. Agent Notch does (“Opus 5.5”, “GPT-6.1 Sol”).</li>
+<li>It reads <strong>exact state for four agents</strong> only (Claude Code, Codex, Command Code, OpenCode). Cursor, Kimi, Pi, LM Studio, Claude Desktop (Cowork) and the rest show as “Open” while they run. In a live run Agent Notch read Claude Code and Codex in depth, monitored Cursor, Antigravity and Pi, and did not show Command Code at all.</li>
 <li>It runs on <strong>Apple silicon with macOS 13 or later</strong>. Boring Notch also runs on Intel.</li>
 <li>It has <strong>no music, calendar, volume overlay or AirDrop</strong>, and is not meant to.</li>
 </ul>
+<p><strong>Where Open Notch wins in the live run:</strong> every running Command Code session and the Command Code app; sub-agents grouped under their parent; sessions stay listed while they run, however long they have been idle.</p>
 <p>Found a mistake about another app? Say so, and it will be corrected.</p>
 </div><nav class="pager" aria-label="Previous and next" data-astro-cid-wehgqt5k><a href="/open-notch/docs/cli" class="prev" data-astro-cid-wehgqt5k><span data-astro-cid-wehgqt5k>Previous</span>notchyctl</a><a href="/open-notch/docs/security" class="next" data-astro-cid-wehgqt5k><span data-astro-cid-wehgqt5k>Next</span>Privacy and security</a></nav></article><aside class="toc" aria-label="On this page" data-astro-cid-wehgqt5k><p data-astro-cid-wehgqt5k>On this page</p><a href="#performance" class data-toc="performance" data-astro-cid-wehgqt5k>Performance</a><a href="#features" class data-toc="features" data-astro-cid-wehgqt5k>Features</a><a href="#design" class data-toc="design" data-astro-cid-wehgqt5k>Design</a><a href="#accessibility" class data-toc="accessibility" data-astro-cid-wehgqt5k>Accessibility</a><a href="#where-open-notch-loses" class data-toc="where-open-notch-loses" data-astro-cid-wehgqt5k>Where Open Notch loses</a></aside></div></main><footer class="footer" data-astro-cid-hkbrpulz><div class="container footer-grid" data-astro-cid-hkbrpulz><div class="footer-brand" data-astro-cid-hkbrpulz><a class="brand" href="/open-notch/" data-astro-cid-hkbrpulz><img src="/open-notch/favicon.png" alt="" width="20" height="20" data-astro-cid-hkbrpulz><span data-astro-cid-hkbrpulz>Open Notch</span></a><p data-astro-cid-hkbrpulz>Every coding agent on your Mac, in the notch. Free, private, and lighter than the menu bar it lives beside.</p><p class="tip" data-astro-cid-hkbrpulz>Press <kbd data-astro-cid-hkbrpulz>⌃</kbd><kbd data-astro-cid-hkbrpulz>⌥</kbd><kbd data-astro-cid-hkbrpulz>N</kbd> on any page to open the notch.</p></div><div class="footer-group" data-astro-cid-hkbrpulz><h4 data-astro-cid-hkbrpulz>Explore Open Notch</h4><ul data-astro-cid-hkbrpulz><li data-astro-cid-hkbrpulz><a href="/open-notch/" data-astro-cid-hkbrpulz>Overview</a></li><li data-astro-cid-hkbrpulz><a href="/open-notch/#approvals" data-astro-cid-hkbrpulz>Approvals</a></li><li data-astro-cid-hkbrpulz><a href="/open-notch/#highlights" data-astro-cid-hkbrpulz>Usage and limits</a></li><li data-astro-cid-hkbrpulz><a href="/open-notch/#performance" data-astro-cid-hkbrpulz>Performance</a></li><li data-astro-cid-hkbrpulz><a href="/open-notch/compare" data-astro-cid-hkbrpulz>Compare</a></li><li data-astro-cid-hkbrpulz><a href="/open-notch/download" data-astro-cid-hkbrpulz>Download</a></li></ul></div><div class="footer-group" data-astro-cid-hkbrpulz><h4 data-astro-cid-hkbrpulz>Agents</h4><ul data-astro-cid-hkbrpulz><li data-astro-cid-hkbrpulz><a href="/open-notch/docs/claude-code" data-astro-cid-hkbrpulz>Claude Code</a></li><li data-astro-cid-hkbrpulz><a href="/open-notch/docs/codex" data-astro-cid-hkbrpulz>Codex</a></li><li data-astro-cid-hkbrpulz><a href="/open-notch/docs/command-code" data-astro-cid-hkbrpulz>Command Code</a></li><li data-astro-cid-hkbrpulz><a href="/open-notch/docs/other-agents" data-astro-cid-hkbrpulz>Every other agent</a></li></ul></div><div class="footer-group" data-astro-cid-hkbrpulz><h4 data-astro-cid-hkbrpulz>Docs</h4><ul data-astro-cid-hkbrpulz><li data-astro-cid-hkbrpulz><a href="/open-notch/docs/getting-started" data-astro-cid-hkbrpulz>Getting started</a></li><li data-astro-cid-hkbrpulz><a href="/open-notch/docs/the-notch" data-astro-cid-hkbrpulz>The notch</a></li><li data-astro-cid-hkbrpulz><a href="/open-notch/docs/approvals" data-astro-cid-hkbrpulz>Approvals</a></li><li data-astro-cid-hkbrpulz><a href="/open-notch/docs/terminal-and-replies" data-astro-cid-hkbrpulz>Terminal and replies</a></li><li data-astro-cid-hkbrpulz><a href="/open-notch/docs/cli" data-astro-cid-hkbrpulz>notchyctl</a></li><li data-astro-cid-hkbrpulz><a href="/open-notch/docs/troubleshooting" data-astro-cid-hkbrpulz>Troubleshooting</a></li></ul></div><div class="footer-group" data-astro-cid-hkbrpulz><h4 data-astro-cid-hkbrpulz>Help</h4><ul data-astro-cid-hkbrpulz><li data-astro-cid-hkbrpulz><a href="/open-notch/faq" data-astro-cid-hkbrpulz>FAQ</a></li><li data-astro-cid-hkbrpulz><a href="/open-notch/changelog" data-astro-cid-hkbrpulz>Changelog</a></li><li data-astro-cid-hkbrpulz><a href="/open-notch/docs/keyboard" data-astro-cid-hkbrpulz>Keyboard</a></li><li data-astro-cid-hkbrpulz><a href="/open-notch/docs/accessibility" data-astro-cid-hkbrpulz>Accessibility</a></li><li data-astro-cid-hkbrpulz><a href="/open-notch/docs/uninstall" data-astro-cid-hkbrpulz>Uninstall</a></li></ul></div><div class="footer-group" data-astro-cid-hkbrpulz><h4 data-astro-cid-hkbrpulz>Privacy</h4><ul data-astro-cid-hkbrpulz><li data-astro-cid-hkbrpulz><a href="/open-notch/privacy" data-astro-cid-hkbrpulz>Privacy policy</a></li><li data-astro-cid-hkbrpulz><a href="/open-notch/docs/security" data-astro-cid-hkbrpulz>Security</a></li></ul></div></div><div class="container footer-base" data-astro-cid-hkbrpulz><span data-astro-cid-hkbrpulz>© 2026 Open Notch</span><span data-astro-cid-hkbrpulz>v0.0.1 · macOS 13 Ventura or later · Apple silicon</span></div></footer><script type="module">var e=document.querySelector(`[data-nav]`),t=!1,n=()=>{t=!1,e?.classList.toggle(`is-scrolled`,window.scrollY>8)};n(),window.addEventListener(`scroll`,()=>{t||(t=!0,requestAnimationFrame(n))},{passive:!0});var r=document.querySelector(`[data-menu-toggle]`),i=document.querySelector(`[data-menu]`),a=t=>{i&&(i.hidden=!t,r?.setAttribute(`aria-expanded`,String(t)),e?.classList.toggle(`menu-open`,t))};r?.addEventListener(`click`,()=>a(i?.hidden===!0)),i?.addEventListener(`click`,e=>{e.target instanceof HTMLAnchorElement&&a(!1)}),document.addEventListener(`keydown`,e=>{e.key===`Escape`&&i&&!i.hidden&&a(!1)});var o=new IntersectionObserver(e=>{for(let t of e)t.isIntersecting&&(t.target.classList.add(`is-visible`),o.unobserve(t.target))},{rootMargin:`0px 0px -8% 0px`});document.querySelectorAll(`[data-reveal]`).forEach(e=>o.observe(e));</script></body></html><script type="module">var e=new Map;document.querySelectorAll(`[data-toc]`).forEach(t=>e.set(t.dataset.toc??``,t));var t=new Set,n=()=>{let n=[...e.keys()].find(e=>t.has(e));n&&e.forEach((e,t)=>e.classList.toggle(`active`,t===n))},r=new IntersectionObserver(e=>{for(let n of e)n.isIntersecting?t.add(n.target.id):t.delete(n.target.id);n()},{rootMargin:`-72px 0px -65% 0px`});e.forEach((e,t)=>{let n=document.getElementById(t);n&&r.observe(n)});</script>
