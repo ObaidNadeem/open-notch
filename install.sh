@@ -64,6 +64,21 @@ sleep 1
 rm -rf "$dest"
 mv "$dest.new" "$dest"
 
+# A second copy (one in /Applications, one in ~/Applications) would go on opening the old version from Spotlight or at login:
+# it is updated too, the same way.
+for dir in /Applications "$HOME/Applications"; do
+	other="$dir/$APP"
+	if [ "$other" != "$dest" ] && [ -d "$other" ] && [ -w "$dir" ]; then
+		if ditto "$tmp/mount/$APP" "$other.new"; then
+			rm -rf "$other"
+			mv "$other.new" "$other"
+			note "Also updated the copy in $dir."
+		else
+			rm -rf "$other.new"
+		fi
+	fi
+done
+
 # The command the agents' hooks call. The old name stays only where it already exists (hooks written by Agent Notch).
 mkdir -p "$HOME/.local/bin"
 ln -sf "$dest/Contents/MacOS/notchyctl" "$HOME/.local/bin/notchyctl"
