@@ -13,9 +13,9 @@
 <ul>
 <li><strong>Codex asks you to trust the hook once.</strong> The first time Codex starts after the hook is added or changed it says “Hooks need review”; choose <strong>Trust all and continue</strong>. Open Notch cannot do this for you, and until you do, the hook does not run.</li>
 <li>If the notch is not running, or the toggle in the menu bar is off, the hook prints nothing and Codex shows its own prompt at once.</li>
-<li>A command that hides characters, or is too long to read, is not allowed from the notch; it goes back to Codex.</li>
-<li>There is no “always allow” for Codex yet.</li>
-<li>This was verified end to end with the Codex CLI: allowing ran the command, and denying made Codex report that Open Notch denied it. The ChatGPT desktop app runs the same engine but was not tested. If <code>~/.codex/config.toml</code> has <code>approvals_reviewer = "auto_review"</code>, Codex’s reviewer decides most approvals itself and they never reach the notch; remove that line to be asked.</li>
+<li>A command that hides characters, or is too long to read, can’t be approved from a card, so it goes straight to Codex’s own prompt: no card, no wait.</li>
+<li>The card shows why Codex is asking, in its own words, and <strong>Always allow</strong> remembers what is safe to (read-only commands like <code>gh pr view</code>, plain build and test commands).</li>
+<li>This was verified end to end with the Codex CLI: allowing ran the command, and denying made Codex report that Open Notch denied it. The ChatGPT desktop app runs the same engine but was not tested. Most requests Codex makes are routine: its sandbox can’t reach the network or write outside the project, so updating a note elsewhere or running <code>gh</code> needs a sandbox escape. Codex’s own reviewer (<code>approvals_reviewer = "auto_review"</code>) can approve those itself, and then only the ones it is unsure of reach the notch. Turn it on with <strong>Codex’s reviewer decides routine requests first</strong> in <strong>Settings → Approvals</strong> (recommended); off, every request Codex makes is a card.</li>
 <li>To remove it, use <strong>Remove</strong> in Settings, or <code>notchyctl uninstall</code>; your own hooks in that file stay.</li>
 </ul>
 <h2 id="optional-the-notify-hook">Optional: the notify hook</h2>
