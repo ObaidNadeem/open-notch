@@ -24,7 +24,7 @@
 <h2 id="turning-an-agent-off">Turning an agent off</h2>
 <p><strong>Settings → Agents</strong> lists every kind of agent; untick one and it is never shown. From a terminal: <code>notchyctl config disabledAgents '["gemini"]'</code>.</p>
 <h2 id="cursor-approvals">Cursor approvals</h2>
-<p>Cursor’s hooks can allow or deny a terminal command or an MCP call. Turn on <strong>Settings → Approvals → Cursor</strong> (or run <code>notchyctl install cursor --write</code>) and Open Notch adds two hooks, <code>beforeShellExecution</code> and <code>beforeMCPExecution</code>, to <code>~/.cursor/hooks.json</code>. Your own hooks in that file stay.</p>
+<p>Cursor’s hooks can allow or deny a terminal command or an MCP call. Connect it in <strong>Settings → Agents → Cursor</strong> (or run <code>notchyctl install cursor --write</code>) and Open Notch adds two hooks, <code>beforeShellExecution</code> and <code>beforeMCPExecution</code>, to <code>~/.cursor/hooks.json</code>. Your own hooks in that file stay.</p>
 <p>Cursor calls these before <strong>every</strong> command, not only the ones it would ask you about, so Open Notch decides which to hold:</p>
 <ul>
 <li>A plain command that only looks (<code>ls</code>, <code>pwd</code>, <code>git status</code>, <code>git diff</code>, <code>git log</code>…) goes straight back to Cursor, and Cursor’s own auto-run applies.</li>

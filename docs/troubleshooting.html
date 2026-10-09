@@ -29,7 +29,7 @@
 <p>Codex’s sandbox can’t reach the network or write outside the project, so routine work (running <code>gh</code>, updating a note in another folder) needs a sandbox escape, and each one is a request. Turn on <strong>Codex’s reviewer decides routine requests first</strong> in <strong>Settings → Approvals</strong>: Codex’s own reviewer approves those itself, and only the ones it is unsure of reach the notch. For a command you trust, <strong>Always allow</strong> on its card stops it asking again.</p>
 <h2 id="codex-asks-in-codex-not-in-the-notch">Codex asks in Codex, not in the notch</h2>
 <ul>
-<li>The Codex hook is not installed: <strong>Settings → Approvals → Codex → Install</strong>, or <code>notchyctl install codex --write</code>.</li>
+<li>The Codex hook is not installed: <strong>Settings → Agents → Codex → Connect</strong>, or <code>notchyctl install codex --write</code>.</li>
 <li><strong>Codex has not been told to trust it.</strong> Codex 0.161 shows “Hooks need review” when a hook is new or changed, and runs nothing until you choose <strong>Trust all and continue</strong>. Start Codex once and choose it. A hook that is reinstalled with a different path needs trusting again.</li>
 <li>Codex’s reviewer is on (<strong>Settings → Approvals → Codex’s reviewer decides routine requests first</strong>): it approves routine requests itself, and only the ones it is unsure of reach the notch. That is by design.</li>
 <li>The command is too long to read on a card, or hides characters: it goes to Codex’s own prompt.</li>
