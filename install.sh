@@ -15,7 +15,6 @@ note() { printf '%s\n' "$*"; }
 fail() { printf 'Open Notch: %s\n' "$*" >&2; exit 1; }
 
 [ "$(uname -s)" = Darwin ] || fail "it runs on macOS only."
-[ "$(uname -m)" = arm64 ] || fail "it needs a Mac with Apple silicon."
 
 # The latest release's tag, from where GitHub redirects /releases/latest (no API, so no rate limit).
 latest=$(curl -fsSI "https://github.com/$REPO/releases/latest" </dev/null | tr -d '\r' | awk 'tolower($1) == "location:" { print $2 }' | sed -n 's|.*/tag/v||p' | tail -n 1)
