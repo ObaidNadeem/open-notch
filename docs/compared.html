@@ -179,7 +179,7 @@
 </tr>
 <tr>
 <td>Updates itself</td>
-<td>◐ never checks by itself; <code>notchyctl update</code> or Check for Updates installs the latest</td>
+<td>◐ says when an update is out (a daily check, can be turned off); one click installs it</td>
 <td>✓</td>
 <td>✓</td>
 </tr>
@@ -217,7 +217,7 @@
 <h2 id="where-open-notch-loses">Where Open Notch loses</h2>
 <ul>
 <li>It is <strong>not notarised</strong>, so macOS warns on first launch. Agent Notch is notarised.</li>
-<li>It <strong>never checks for updates by itself</strong>, on purpose (it never phones home): you run <code>notchyctl update</code> or press Check for Updates, which is less convenient than both others.</li>
+<li>It <strong>never installs an update by itself</strong>: it says when one is out (a daily check with GitHub, which can be turned off) and you click Update.</li>
 <li>Approvals reach <strong>four agents</strong> (Claude Code, Codex, Cursor, Command Code) and questions two (Claude Code, Command Code). Agent Notch’s setup offers approval replies for Claude Code and Codex, and its bundle also forwards OpenCode prompts; its Cursor script only observes.</li>
 <li>Its <strong>Claude limits read no login by default</strong>, so they are only as fresh as the last Claude Code session. Agent Notch always reads your Claude login from the Keychain and asks Anthropic. Open Notch does the same only if you turn on Live Claude limits.</li>
 <li>It reads <strong>exact state for four agents</strong> only (Claude Code, Codex, Command Code, OpenCode). Cursor, Kimi, Pi, LM Studio, Claude Desktop (Cowork) and the rest show as “Open” while they run. In a live run Agent Notch read Claude Code and Codex in depth, monitored Cursor, Antigravity and Pi, and did not show Command Code at all.</li>
